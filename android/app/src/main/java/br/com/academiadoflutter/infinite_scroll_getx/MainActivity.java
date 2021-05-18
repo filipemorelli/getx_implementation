@@ -1,4 +1,4 @@
-package br.com.academiadoflutter.infinite_scroll_getx;
+package br.com.infinite_scroll_getx;
 
 import io.flutter.embedding.android.FlutterActivity;
 

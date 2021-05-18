@@ -6,7 +6,7 @@ import 'package:lazy_load_scrollview/lazy_load_scrollview.dart';
 class HomePage extends StatelessWidget {
   final HomeController _controller;
 
-  const HomePage(this._controller, {Key key}) : super(key: key);
+  const HomePage(this._controller, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,12 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Infinite Scroll'),
         actions: [
-          PopupMenuButton(
+          PopupMenuButton<int>(
+            icon: Icon(Icons.more_vert),
             initialValue: _controller.limit,
-            onSelected: (value) => _controller.changeTotalPerPage(value),
+            onSelected: (int value) => _controller.changeTotalPerPage(value),
             itemBuilder: (context) {
-              return [
+              return <PopupMenuEntry<int>>[
                 CheckedPopupMenuItem(
                   value: 15,
                   checked: _controller.limit == 15,
@@ -47,7 +48,11 @@ class HomePage extends StatelessWidget {
             itemCount: _controller.users.length,
             itemBuilder: (context, index) {
               final user = _controller.users[index];
-              return ListTile(leading: Text(user.id), title: Text(user.name), subtitle: Text(user.username));
+              return ListTile(
+                leading: Text(user.id ?? ''),
+                title: Text(user.name ?? ''),
+                subtitle: Text(user.username ?? ''),
+              );
             },
           ),
         ),

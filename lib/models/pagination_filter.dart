@@ -1,6 +1,6 @@
 class PaginationFilter {
-  int page;
-  int limit;
+  int? page;
+  int? limit;
 
   @override
   String toString() => 'PaginationFilter(page: $page, limit: $limit)';
@@ -8,10 +8,8 @@ class PaginationFilter {
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
-  
-    return o is PaginationFilter &&
-      o.page == page &&
-      o.limit == limit;
+
+    return o is PaginationFilter && o.page == page && o.limit == limit;
   }
 
   @override

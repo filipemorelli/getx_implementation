@@ -1,18 +1,15 @@
 import 'dart:convert';
 
-
 class UserModel {
-  
-  String id;
-  String name;
-  String username;
-  
+  String? id;
+  String? name;
+  String? username;
+
   UserModel({
     this.id,
     this.name,
     this.username,
   });
-
 
   Map<String, dynamic> toMap() {
     return {
@@ -22,9 +19,9 @@ class UserModel {
     };
   }
 
-  factory UserModel.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-  
+  factory UserModel.fromMap(Map<String, dynamic>? map) {
+    if (map == null) return UserModel();
+
     return UserModel(
       id: map['id'] ?? '',
       name: map['name'] ?? '',
