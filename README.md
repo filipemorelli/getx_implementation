@@ -1,6 +1,6 @@
 # GetX with Clean architeture
 
-Basically, this is a simple MVC implementation with the GetX plugin and also was implemented unit tests
+Basically, this is a simple MVC implementation with the GetX plugin
 
 Knowledge based on this links:
 
