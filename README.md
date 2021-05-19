@@ -1,6 +1,6 @@
-# GetX with Clean architeture
+# GetX implementation with get_cli
 
-Basically, this is a simple MVC implementation with the GetX plugin
+Basically, this is a simple implementation with the GetX plugin
 
 Knowledge based on this links:
 
